@@ -43,19 +43,50 @@ class ScoreFragment : Fragment() {
         //observe state
         viewModel.state.observe(viewLifecycleOwner, {
             if(it.isLoading){
-                binding.txtScore.text = Constants.WAIT
+                showLoader()
             }else{
 
                 if(it.creditScore == null){
-                    binding.txtScore.text = it.error
+                    showError()
                 }else{
-                    binding.txtScore.text = "${it.creditScore.score} / ${it.creditScore.maxScore}"
+                    showScore(it)
                 }
 
             }
 
         })
     }
+
+
+    //loading
+    private fun showLoader(){
+        binding.progress.visibility = View.VISIBLE
+        binding.donutScore.visibility = View.GONE
+        binding.error.visibility = View.GONE
+
+    }
+
+    //error
+    private fun showError(){
+        binding.progress.visibility = View.GONE
+        binding.donutScore.visibility = View.GONE
+        binding.error.visibility = View.VISIBLE
+    }
+
+    // score
+    private fun showScore(state: ScoreState){
+        binding.progress.visibility = View.GONE
+        binding.donutScore.visibility = View.VISIBLE
+        binding.error.visibility = View.GONE
+
+        binding.donutScore.apply {
+            maxScore = state.creditScore?.maxScore ?: 700
+            score = state.creditScore?.score ?: 0
+            arcAngle = 80f
+        }
+
+    }
+
 
 
 

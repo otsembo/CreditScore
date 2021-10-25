@@ -16,4 +16,11 @@ object Constants {
     const val WAIT = "Please wait as we calculate your score"
 
 
+    //Score texts
+    const val SCORE_INTRO = "Your credit score is"
+    const val SCORE_OUTRO = "out of "
+    //actual score
+    const val SCORE = "327"
+
+
 }

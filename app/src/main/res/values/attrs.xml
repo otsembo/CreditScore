@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ScoreDonut">
+        <attr name="score" format="integer"/>
+        <attr name="maxScore" format="integer"/>
+        <attr name="arcAngle" format="float"/>
+        <attr name="scoreColor" format="color"/>
+        <attr name="infoColor" format="color"/>
+        <attr name="borderColor" format="color"/>
+    </declare-styleable>
+
+</resources>

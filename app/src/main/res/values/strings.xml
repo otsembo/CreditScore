@@ -3,4 +3,5 @@
     <string name="actual_score">325</string>
     <string name="max_score">700</string>
     <string name="slash"> / </string>
+    <string name="there_was_an_unexpected_error">There was an unexpected error</string>
 </resources>

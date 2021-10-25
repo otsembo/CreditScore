@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/txtScore"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="327 / 700"
@@ -15,4 +16,94 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/infoFrame">
+
+
+        <!--Loading View-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/progress"
+            android:visibility="visible"
+            >
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="PLEASE WAIT\nCALCULATING YOUR SCORE ..."
+                android:textSize="17sp"
+                android:gravity="center"
+                android:padding="5dp"
+                />
+
+        </LinearLayout>
+
+
+        <!--Score View-->
+        <com.ian.clearscoreinterview.common.views.ScoreDonut
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:score="0"
+            app:maxScore="0"
+            app:arcAngle="264"
+            android:id="@+id/donutScore"
+            />
+
+
+        <!--Error View-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/error"
+            android:visibility="gone"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                app:srcCompat="@drawable/ic_baseline_error_outline_24"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/there_was_an_unexpected_error"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:id="@+id/txtError"
+                />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

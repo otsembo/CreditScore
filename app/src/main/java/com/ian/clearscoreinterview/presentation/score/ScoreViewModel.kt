@@ -65,4 +65,12 @@ class ScoreViewModel
         }
 
 
+    //calculate angle
+    fun arcSize(score:Int, maxScore:Int): Float{
+        val ratio = score / maxScore
+        val angle = ratio * 360
+        return angle.toFloat()
+    }
+
+
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="donut_stroke">2.5dp</dimen>
+    <dimen name="donut_text">14sp</dimen>
+    <dimen name="donut_score_text">50sp</dimen>
+    <dimen name="arc_stroke_size">3.5dp</dimen>
+</resources>
