@@ -14,7 +14,7 @@ Technologies Used
 
 * The application has been built with the following:
    
-    *[Kotlin](https://kotlinlang.org/)
+    * [Kotlin](https://kotlinlang.org/)
     * [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
     * [Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)
     * [Jetpack](https://developer.android.com/jetpack)
@@ -24,7 +24,7 @@ Technologies Used
     
 
 * Architecture
-    *App Architecture - MVVM + Clean Architecture
+    * App Architecture - MVVM + Clean Architecture
   
 * Tests
     * [JUnit5](https://junit.org/junit5/)
@@ -35,4 +35,4 @@ I added some screenshots in the `screenshots` folder, in the root directory of t
 
 Splash | Loading | Success | Error
 ------ | ------- | ------- | -----
-<img src="screenshots/splashscreen.jpg" width="150"/> | <img src="screenshots/loading_score.jpg" width="150"/> | <img src="screenshots/success.jpg" width="150"/> | <img src="screenshots/success.jpg" width="150"/>
+<img src="screenshots/splashscreen.jpg" width="150"/> | <img src="screenshots/loading_score.jpg" width="150"/> | <img src="screenshots/success.jpg" width="150"/> | <img src="screenshots/apperror.jpg" width="150"/>
