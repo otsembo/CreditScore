@@ -1,29 +1,23 @@
 package com.ian.clearscoreinterview.presentation.score
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.ian.clearscoreinterview.common.Constants
 import com.ian.clearscoreinterview.databinding.FragmentScoreBinding
+import com.ian.clearscoreinterview.presentation.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ScoreFragment : Fragment() {
 
     //viewModel
-    private val viewModel: ScoreViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
 
     //binding
     private lateinit var binding: FragmentScoreBinding
-
-    //context
-    private val mCtx by lazy {
-        requireActivity()
-    }
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -36,6 +30,7 @@ class ScoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initObservers()
+        initClickListeners()
     }
 
     //init observers
@@ -55,6 +50,13 @@ class ScoreFragment : Fragment() {
             }
 
         })
+    }
+
+    //init click listeners
+    private fun initClickListeners(){
+        binding.btnRefresh.setOnClickListener {
+            viewModel.fetchScore()
+        }
     }
 
 

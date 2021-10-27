@@ -5,4 +5,5 @@
     <string name="slash"> / </string>
     <string name="there_was_an_unexpected_error">There was an unexpected error</string>
     <string name="please_wait_ncalculating_your_score">PLEASE WAIT\nCALCULATING YOUR SCORE ...</string>
+    <string name="refresh">RETRY</string>
 </resources>

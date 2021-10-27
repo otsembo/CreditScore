@@ -8,7 +8,7 @@ import javax.inject.Inject
 class ScoreRepositoryImpl
     @Inject constructor(private val api:CreditAPI) : ScoreRepository{
 
-    override suspend fun fetchCoins(): CreditReportDto {
+    override suspend fun fetchCreditReport(): CreditReportDto {
         return api.fetchScore()
     }
 }

@@ -7,8 +7,8 @@ import com.ian.clearscoreinterview.data.repository.ScoreRepository
 import com.ian.clearscoreinterview.domain.model.CreditScore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import okio.IOException
 import retrofit2.HttpException
-import java.io.IOException
 import javax.inject.Inject
 
 class FetchScoreUseCase
@@ -20,7 +20,7 @@ class FetchScoreUseCase
                 //start loading
                 emit(Resource.Loading<CreditScore>())
                 //get score from repo
-                val score = repository.fetchCoins().creditReportInfo.toCreditScore()
+                val score = repository.fetchCreditReport().creditReportInfo.toCreditScore()
                 //success
                 emit(Resource.Success<CreditScore>(score))
 

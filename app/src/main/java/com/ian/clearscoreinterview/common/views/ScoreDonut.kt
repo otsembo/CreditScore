@@ -10,6 +10,8 @@ import android.util.AttributeSet
 import android.view.View
 import com.ian.clearscoreinterview.R
 import com.ian.clearscoreinterview.common.Constants
+import java.math.RoundingMode
+import java.text.DecimalFormat
 import kotlin.properties.Delegates
 
 class ScoreDonut  : View {
@@ -91,8 +93,6 @@ class ScoreDonut  : View {
     //initialize resources
     private fun initResources(){
         //initialize resources
-
-        //size = resources.getDimensionPixelSize(R.dimen.donut_size)
         strokeSize = resources.getDimensionPixelSize(R.dimen.donut_stroke)
         arcSize = resources.getDimensionPixelSize(R.dimen.arc_stroke_size)
         textSize = resources.getDimensionPixelSize(R.dimen.donut_text)
@@ -106,6 +106,8 @@ class ScoreDonut  : View {
         viewWidth = MeasureSpec.getSize(widthMeasureSpec)
         viewHeight = MeasureSpec.getSize(heightMeasureSpec)
         size = viewWidth
+        //adjust angle
+        arcAngle = angle(score, maxScore)
     }
 
     @JvmName("setValue1")
@@ -170,7 +172,7 @@ class ScoreDonut  : View {
         paint.strokeWidth = arcSize.toFloat()
 
         //draw arc
-        canvas.drawArc(oval, -90F, angle(score,maxScore), false, paint)
+        canvas.drawArc(oval, -90F, arcAngle, false, paint)
 
     }
 
@@ -222,7 +224,19 @@ class ScoreDonut  : View {
     private fun angle(score: Int, maxScore: Int): Float {
         val ratio = score.toDouble() / maxScore
         val arcAng = ratio * 360
-        return arcAng.toFloat()
+
+        //confirm score <= maxScore
+        return if(score <= maxScore)
+            arcAng.toFloat().roundNumber()
+        else
+            0.0f.roundNumber()
+    }
+
+    //round number to 2dp
+    private fun Float.roundNumber() : Float{
+       val format = DecimalFormat("#.##")
+       format.roundingMode = RoundingMode.CEILING
+       return format.format(this).toFloat()
     }
 
 
