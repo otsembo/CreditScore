@@ -9,18 +9,15 @@ object Constants {
 
     //CONNECTION ERRORS
     // unexpected error
-    const val UNEXPECTED = "An unexpected error has occurred"
+    const val UNEXPECTED = "An unexpected error has occurred! Check your connection and restart the app."
     //network error
     const val NETWORK_IO_ERROR = "Could not reach server! Check your internet connection"
-    //waiting messages
-    const val WAIT = "Please wait as we calculate your score"
 
 
     //Score texts
     const val SCORE_INTRO = "Your credit score is"
     const val SCORE_OUTRO = "out of "
-    //actual score
-    const val SCORE = "327"
+
 
 
 }

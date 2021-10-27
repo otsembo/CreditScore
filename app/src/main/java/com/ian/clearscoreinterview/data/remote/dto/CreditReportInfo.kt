@@ -1,5 +1,6 @@
 package com.ian.clearscoreinterview.data.remote.dto
 
+import com.ian.clearscoreinterview.common.AppUtils
 import com.ian.clearscoreinterview.domain.model.CreditScore
 
 data class CreditReportInfo(
@@ -40,4 +41,5 @@ data class CreditReportInfo(
             maxScore = maxScoreValue
         )
     }
+
 

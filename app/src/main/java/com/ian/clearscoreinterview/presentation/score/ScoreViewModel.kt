@@ -1,10 +1,12 @@
 package com.ian.clearscoreinterview.presentation.score
 
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ian.clearscoreinterview.common.AppUtils
 import com.ian.clearscoreinterview.common.Constants
 import com.ian.clearscoreinterview.common.Resource
 import com.ian.clearscoreinterview.domain.model.CreditScore
@@ -22,20 +24,22 @@ class ScoreViewModel
     ) : ViewModel(){
 
 
+    //state of the score
+    private val _state = MutableLiveData<ScoreState>()
+    val state : LiveData<ScoreState>
+        get() = _state
+
         init {
-            //fetchScore()
+            fetchScore()
         }
 
 
-        //state of the score
-        private val _state = MutableLiveData<ScoreState>()
-        val state : LiveData<ScoreState>
-            get() = _state
+
 
 
 
         //invoke the fetch score use case
-        public fun fetchScore(){
+        private fun fetchScore(){
             //call use case
             fetchScoreUseCase().onEach { resource ->
                 when(resource){

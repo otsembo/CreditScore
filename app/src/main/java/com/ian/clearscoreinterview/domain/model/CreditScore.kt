@@ -4,3 +4,4 @@ data class CreditScore(
     val score:Int,
     val maxScore:Int
 )
+

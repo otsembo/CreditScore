@@ -1,6 +1,7 @@
 package com.ian.clearscoreinterview.presentation.score
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +36,6 @@ class ScoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initObservers()
-        viewModel.fetchScore()
     }
 
     //init observers
@@ -76,13 +76,12 @@ class ScoreFragment : Fragment() {
     // score
     private fun showScore(state: ScoreState){
         binding.progress.visibility = View.GONE
-        binding.donutScore.visibility = View.VISIBLE
         binding.error.visibility = View.GONE
+        binding.donutScore.visibility = View.VISIBLE
 
         binding.donutScore.apply {
             maxScore = state.creditScore?.maxScore ?: 700
             score = state.creditScore?.score ?: 0
-            arcAngle = 80f
         }
 
     }

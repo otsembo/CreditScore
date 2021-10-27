@@ -169,11 +169,8 @@ class ScoreDonut  : View {
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = arcSize.toFloat()
 
-
-        val arcY = 168.171428571F
-
         //draw arc
-        canvas.drawArc(oval, -90F, arcAngle, false, paint)
+        canvas.drawArc(oval, -90F, angle(score,maxScore), false, paint)
 
     }
 
@@ -223,7 +220,7 @@ class ScoreDonut  : View {
 
     //calculate angle
     private fun angle(score: Int, maxScore: Int): Float {
-        val ratio = score / maxScore
+        val ratio = score.toDouble() / maxScore
         val arcAng = ratio * 360
         return arcAng.toFloat()
     }
