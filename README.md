@@ -1,6 +1,7 @@
 # CLEAR SCORE ANDROID TEST INTERVIEW
 
 Creating ClearScore App using [Android Architecture Components](https://developer.android.com/topic.libraries/architecture), in 100% Kotlin.
+
 The application has included [Clean Architecture by Uncle Bob](https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/) that guides in separation of concerns for easier testing and debugging.
 
 Requirements
